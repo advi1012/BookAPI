@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using BooksApi.Modelle;
+using BooksApi.Dienste;
 
 namespace BooksApi.Controllers
 {
@@ -12,18 +13,32 @@ namespace BooksApi.Controllers
     [ApiController]
     public class ReportController : ControllerBase
     {
+        private readonly ReportService _reportService;
+
+        public ReportController(ReportService reportService)
+        {
+            _reportService = reportService;
+        }
+
+
         // GET: api/Report
         [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+        public ActionResult<List<Report>> Get() =>
+            _reportService.Get();
+
+
 
         // GET: api/Report/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public ActionResult<Report> Get(string id)
         {
-            return "value";
+            var report = _reportService.GetById(id);
+            if (report == null)
+            {
+                return NotFound();
+            }
+
+            return report;
         }
 
         // POST: api/Report
