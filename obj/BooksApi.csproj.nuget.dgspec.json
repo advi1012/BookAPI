@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vincent.adam\\Desktop\\Projects\\BooksApi\\BooksApi.csproj": {}
+    "C:\\Users\\vincent.adam\\Desktop\\Projects\\BookAPI\\BooksApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vincent.adam\\Desktop\\Projects\\BooksApi\\BooksApi.csproj": {
+    "C:\\Users\\vincent.adam\\Desktop\\Projects\\BookAPI\\BooksApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vincent.adam\\Desktop\\Projects\\BooksApi\\BooksApi.csproj",
+        "projectUniqueName": "C:\\Users\\vincent.adam\\Desktop\\Projects\\BookAPI\\BooksApi.csproj",
         "projectName": "BooksApi",
-        "projectPath": "C:\\Users\\vincent.adam\\Desktop\\Projects\\BooksApi\\BooksApi.csproj",
+        "projectPath": "C:\\Users\\vincent.adam\\Desktop\\Projects\\BookAPI\\BooksApi.csproj",
         "packagesPath": "C:\\Users\\vincent.adam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vincent.adam\\Desktop\\Projects\\BooksApi\\obj\\",
+        "outputPath": "C:\\Users\\vincent.adam\\Desktop\\Projects\\BookAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vincent.adam\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Formatters.Json": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.9.10, )"

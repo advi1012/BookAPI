@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using BooksApi.Modelle;
 
 namespace BooksApi.Controllers
 {
@@ -27,7 +28,8 @@ namespace BooksApi.Controllers
 
         // POST: api/Report
         [HttpPost]
-        public void Post([FromBody] string value)
+        [Consumes("application/csp-report")]
+        public void Post(Report value)
         {
             
         }
