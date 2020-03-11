@@ -51,16 +51,36 @@ namespace BooksApi.Controllers
             return CreatedAtRoute("GetReport", new { id = value.Id.ToString() }, value);
         }
 
-        // PUT: api/Report/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        
+        [HttpPut("{id:length(24)}")]
+        public IActionResult Update(string id, Report reportIn)
         {
+            var report = _reportService.GetById(id);
+            if (report == null)
+            {
+                return NotFound();
+            }
+            _reportService.Update(id, reportIn);
+
+            return NoContent();
         }
 
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        
+        [HttpDelete("{id:length(24)}")]
+        public IActionResult Delete(string id)
         {
+            var report = _reportService.GetById(id);
+
+            if (report == null)
+            {
+                return NotFound();
+            }
+
+            _reportService.Remove(report.Id);
+
+            return NoContent();
+
+
         }
     }
 }
