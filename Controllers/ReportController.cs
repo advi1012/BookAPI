@@ -44,9 +44,11 @@ namespace BooksApi.Controllers
         // POST: api/Report
         [HttpPost]
         [Consumes("application/csp-report")]
-        public void Post(Report value)
+        public ActionResult<Report> Post(Report value)
         {
-            
+            _reportService.Create(value);
+
+            return CreatedAtRoute("GetReport", new { id = value.Id.ToString() }, value);
         }
 
         // PUT: api/Report/5
